@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Inf Pro — Loja</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-surface">
+  <header class="site-header">
+    <div class="container flex items-center justify-between">
+      <a class="brand" href="index.html">INF PRO</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="loja.html" class="active">Loja</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+      <div class="header-actions">
+        <button id="themeToggle2" class="btn-theme">🌙</button>
+        <a href="login.html" class="btn btn-sm btn-outline">Entrar</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container py-10">
+    <div class="flex justify-between items-center mb-6">
+      <h1 class="text-3xl font-bold">Catálogo</h1>
+      <div class="flex gap-2">
+        <input id="searchInput" placeholder="Pesquisar..." class="input-search">
+        <select id="categoryFilter" class="select-filter">
+          <option value="all">Todas</option>
+          <option value="gpu">GPU</option>
+          <option value="cpu">CPU</option>
+          <option value="mb">Placa-mãe</option>
+          <option value="ram">RAM</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="productsGrid" class="grid md:grid-cols-3 gap-6"></div>
+  </main>
+
+  <!-- carrinho offcanvas -->
+  <div class="offcanvas offcanvas-end" id="cartOffcanvas">
+    <div class="offcanvas-header">
+      <h5>Carrinho</h5>
+      <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div id="cartItems"></div>
+      <div class="mt-3">
+        <div class="d-flex justify-content-between"><div>Subtotal</div><div id="cartSubtotal">R$ 0,00</div></div>
+        <div class="d-flex justify-content-between"><div>Frete</div><div id="cartShipping">R$ 0,00</div></div>
+        <div class="d-flex justify-content-between fw-bold mt-2"><div>Total</div><div id="cartTotal">R$ 0,00</div></div>
+        <div class="mt-3">
+          <button id="btnCheckout" class="btn btn-success w-100">Finalizar compra</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="cart-floating" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas">🛒</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
